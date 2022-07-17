@@ -1,0 +1,70 @@
+{
+    "v": 1,
+    "name": "AppsScript-email-verification",
+    "folders": [],
+    "requests": [
+        {
+            "v": "1",
+            "endpoint": "https://echo.hoppscotch.io",
+            "name": "api status",
+            "params": [],
+            "headers": [],
+            "method": "GET",
+            "auth": {
+                "authType": "none",
+                "authActive": false,
+                "addTo": "Query params",
+                "key": "api_key",
+                "value": "myApiKey"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "body": {
+                "contentType": null,
+                "body": null
+            }
+        },
+        {
+            "v": "1",
+            "endpoint": "https://echo.hoppscotch.io",
+            "name": "request email verification",
+            "params": [],
+            "headers": [],
+            "method": "POST",
+            "auth": {
+                "authType": "api-key",
+                "authActive": true,
+                "addTo": "Query params",
+                "key": "api_key",
+                "value": "myApiKey"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "body": {
+                "contentType": "application/json",
+                "body": "{\n  \"step\": \"request\",\n  \"emailAddress\": \"userEmail\",\n  \"websiteTitle\": \"myWebsite (Login)\",\n  \"url\": \"http://example.org/login\",\n  \"operation\": \"login\"\n}"
+            }
+        },
+        {
+            "v": "1",
+            "endpoint": "https://echo.hoppscotch.io",
+            "name": "verify email",
+            "params": [],
+            "headers": [],
+            "method": "POST",
+            "auth": {
+                "authType": "api-key",
+                "authActive": true,
+                "addTo": "Query params",
+                "key": "api_key",
+                "value": "myApiKey"
+            },
+            "preRequestScript": "",
+            "testScript": "",
+            "body": {
+                "contentType": "application/json",
+                "body": "{\n  \"step\": \"verify\",\n  \"emailAddress\": \"userEmail\",\n  \"otp\": \"userOTP\",\n  \"operation\": \"login\"\n}"
+            }
+        }
+    ]
+}
